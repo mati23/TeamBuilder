@@ -107,5 +107,430 @@ namespace Team_Builder.Forms
         {
 
         }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbBallControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlayerName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar13_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar14_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar15_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel38_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar16_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel40_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar17_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar18_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar12_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar11_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar10_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar9_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar8_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar7_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar6_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar5_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar4_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar3_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar1_Scroll_1(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar2_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar19_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel47_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar20_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel48_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel49_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar21_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel51_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar22_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }
