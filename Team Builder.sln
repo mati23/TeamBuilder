@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team Builder", "Team Builder\Team Builder.csproj", "{760B7702-B955-448C-979F-B256B785527F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{760B7702-B955-448C-979F-B256B785527F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760B7702-B955-448C-979F-B256B785527F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760B7702-B955-448C-979F-B256B785527F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760B7702-B955-448C-979F-B256B785527F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A29FC6FB-283A-40C8-B866-964ED756F91A}
+	EndGlobalSection
+EndGlobal

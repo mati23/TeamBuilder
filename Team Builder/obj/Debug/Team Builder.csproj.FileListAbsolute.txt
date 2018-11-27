@@ -1,0 +1,23 @@
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\Team Builder.exe.config
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\Team Builder.exe
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\Team Builder.pdb
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MetroFramework.Design.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MetroFramework.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MySql.Data.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\Google.Protobuf.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MySql.Data.xml
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.csprojAssemblyReference.cache
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team_Builder.Form1.resources
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team_Builder.Properties.Resources.resources
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.csproj.GenerateResource.cache
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.csproj.CoreCompileInputs.cache
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.csproj.CopyComplete
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.exe
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team Builder.pdb
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team_Builder.Forms.InitForm.resources
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\obj\Debug\Team_Builder.Forms.AddPlayerForm.resources
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MaterialDesignColors.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Mateus\source\repos\Team Builder\Team Builder\bin\Debug\MaterialDesignThemes.Wpf.xml
