@@ -19,9 +19,12 @@ namespace Team_Builder.Forms
         public AddPlayerForm()
         {
             InitializeComponent();
+            LoadComboBoxes();
+           
             
 
-        MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
+
+            MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
             
             
         }
@@ -66,18 +69,22 @@ namespace Team_Builder.Forms
                 int.Parse(txtPlayerWeight.Text) + "," +
                 int.Parse(txtPlayerHeight.Text) + "," +
                 1                               + "," +
-                'R'                             + "," +
+                "'R'"                           + "," +
                 1                               +  ");";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
-            MySqlCommand command = new MySqlCommand(sqlInsertStats, connection);
-            command.CommandType = CommandType.Text;
+            MySqlCommand commandInsertStats = new MySqlCommand(sqlInsertStats, connection);
+            MySqlCommand commandInsertPlayer = new MySqlCommand(sqlInsertPlayer, connection);
+            commandInsertStats.CommandType = CommandType.Text;
+            commandInsertPlayer.CommandType = CommandType.Text;
             connection.Open();
             try
             {
-             
-                int i = command.ExecuteNonQuery();
-                if (i > 0)
+
+                List<int> i = new List<int>();
+                i.Add(commandInsertStats.ExecuteNonQuery());
+                i.Add(commandInsertPlayer.ExecuteNonQuery());
+                if (i[0] > 0 && i[1]>0)
                 {
                     MessageBox.Show("Player successfully registered!");
                 }
@@ -151,6 +158,42 @@ namespace Team_Builder.Forms
             
         }
 
+        private void LoadComboBoxes()
+        {   
+            //loads the player's dominant foot
+            mtDominantFootCB.Items.Add("L");
+            mtDominantFootCB.Items.Add("R");
+            mtDominantFootCB.Items.Add("LR");
+
+            //load nationality
+            List<String> nationality = new List<string>();
+            string sqlSelectNationality = "SELECT * FROM nationality";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand commandSelect = new MySqlCommand(sqlSelectNationality, connection);
+            commandSelect.CommandType = CommandType.Text;
+            connection.Open();
+            try
+            {
+                MySqlDataReader dataReader = commandSelect.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    nationality.Add(dataReader["nationality_name"].ToString());
+
+                }
+                mtNationalityCB.DataSource = nationality;
+                
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
         private void AnyMetroLabel_ValueChanged(MetroFramework.Controls.MetroTrackBar trackBar,
             MetroFramework.Controls.MetroLabel label)
         {
@@ -213,7 +256,7 @@ namespace Team_Builder.Forms
 
         private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void metroLabel6_Click(object sender, EventArgs e)
