@@ -7,18 +7,89 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Team_Builder.Forms
 {
     
     public partial class AddPlayerForm : Form
-    {   
-        
-       
+    {
+        private string connectionString = @"Server=localhost;Database=teambuilder;Uid=root;Password=123456789;";
+
         public AddPlayerForm()
         {
             InitializeComponent();
             
+
+        MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
+            
+            
+        }
+        //add registry to database
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            //string of the statement for insertion in stats_player table
+            string sqlInsertStats = "INSERT INTO `stats_player` (date_updated,attack,ball_control,dribbling,low_pass,lofted_pass,finishing,curve,header,defensive_skill,ball_winning,kick_power,speed,explosion,body_strenght,physical_contact,jump,goalkeeping,catching,clearing,coverage,reflexes,stamina,non_domminant_foot_usage,non_domminant_foot_precision,`condition`,injury_resistence,stats_club_id,stats_player_name) VALUES (CURDATE()," +
+            
+             mtTrackBarAttack.Value           + "," +
+             mtTrackBarBallControl.Value      + "," +
+             mtTrackBarDribbling.Value        + "," +
+             mtLowPassTB.Value                + "," +
+             mtLoftedPassTB.Value             + "," +
+             mtFinishingTB.Value              + "," +
+             mtCurveTB.Value                  + "," +
+             mtHeadingTB.Value                + "," +
+             mtDefensiveTB.Value              + "," +
+             mtBallWinningTB.Value            + "," +
+             mtKickPowerTB.Value              + "," +
+             mtSpeedTB.Value                  + "," +
+             mtExplosionTB.Value              + "," +
+             mtBodyStrenghtTB.Value           + "," +
+             mtPhysicalContactTB.Value        + "," +
+             mtJumpTB.Value                   + "," +
+             mtGoalkeepingTB.Value            + "," +
+             mtCatchingTB.Value               + "," +
+             mtClearingTB.Value               + "," +
+             mtCoverageTB.Value               + "," +
+             mtReflexesTB.Value               + "," +
+             mtStaminaTB.Value                + "," +
+             mtNDFUsageTB.Value               + "," +
+             mtNDFPrecisionTB.Value           + "," +
+             mtConditionTB.Value              + "," +
+             mtInjuryResistenceTB.Value       + "," +
+             "1,'Messi'" + ");";
+
+            string sqlInsertPlayer = "INSERT INTO player (player_name,player_age,player_weight,player_height,"+
+                "player_nationality_id,player_dominant_foot,player_stats_id) VALUES ('" +
+                txtPlayerName.Text + "'," +
+                int.Parse(txtPlayerAge.Text)    + "," +
+                int.Parse(txtPlayerWeight.Text) + "," +
+                int.Parse(txtPlayerHeight.Text) + "," +
+                1                               + "," +
+                'R'                             + "," +
+                1                               +  ");";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand command = new MySqlCommand(sqlInsertStats, connection);
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            try
+            {
+             
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Player successfully registered!");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         private void metroLabel1_Click(object sender, EventArgs e)
@@ -128,10 +199,7 @@ namespace Team_Builder.Forms
 
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
@@ -340,7 +408,7 @@ namespace Team_Builder.Forms
 
         private void metroLabel24_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtDefensiveTB, mtDefensiveLabel);
         }
 
         private void metroLabel25_Click(object sender, EventArgs e)
@@ -350,12 +418,12 @@ namespace Team_Builder.Forms
 
         private void metroTrackBar9_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtDefensiveTB, mtDefensiveLabel, 40, 99);
         }
 
         private void metroLabel22_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtHeadingTB, mtHeadingLabel);
         }
 
         private void metroLabel23_Click(object sender, EventArgs e)
@@ -365,7 +433,7 @@ namespace Team_Builder.Forms
 
         private void metroTrackBar8_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtHeadingTB, mtHeadingLabel, 40, 99);
         }
 
         private void metroLabel20_Click(object sender, EventArgs e)
@@ -385,7 +453,7 @@ namespace Team_Builder.Forms
 
         private void metroLabel18_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtFinishingTB, mtFinishingLabel);
         }
 
         private void metroLabel19_Click(object sender, EventArgs e)
@@ -395,12 +463,12 @@ namespace Team_Builder.Forms
 
         private void metroTrackBar6_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtFinishingTB, mtFinishingLabel, 40, 90);
         }
 
         private void metroLabel16_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtLoftedPassTB, mtLoftedPassLabel);
         }
 
         private void metroLabel17_Click(object sender, EventArgs e)
@@ -410,27 +478,27 @@ namespace Team_Builder.Forms
 
         private void metroTrackBar5_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtLoftedPassTB,mtLoftedPassLabel, 40, 99);
         }
 
         private void metroLabel10_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtLowPassTB, mtLowPassLabel);
         }
 
         private void metroLabel11_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void metroTrackBar4_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtLowPassTB, mtLowPassLabel, 40, 99);
         }
 
         private void metroLabel14_Click(object sender, EventArgs e)
         {
-
+            AnyMetroLabel_ValueChanged(mtTrackBarDribbling, mtDribblingLabel);
         }
 
         private void metroLabel15_Click(object sender, EventArgs e)
@@ -440,7 +508,7 @@ namespace Team_Builder.Forms
 
         private void metroTrackBar3_Scroll(object sender, ScrollEventArgs e)
         {
-
+            AnyMetroTrackBar_ValueChanged(mtTrackBarDribbling, mtDribblingLabel, 40, 99);
         }
 
         private void metroLabel8_Click(object sender, EventArgs e)
@@ -529,6 +597,11 @@ namespace Team_Builder.Forms
         }
 
         private void metroTrackBar22_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroTrackBar23_Scroll(object sender, ScrollEventArgs e)
         {
 
         }
