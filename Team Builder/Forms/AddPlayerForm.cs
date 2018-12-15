@@ -69,7 +69,7 @@ namespace Team_Builder.Forms
                 int.Parse(txtPlayerWeight.Text) + "," +
                 int.Parse(txtPlayerHeight.Text) + "," +
                 1                               + "," +
-                "'R'"                           + "," +
+                "''"                           + "," +
                 1                               +  ");";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -83,6 +83,7 @@ namespace Team_Builder.Forms
 
                 List<int> i = new List<int>();
                 i.Add(commandInsertStats.ExecuteNonQuery());
+                
                 i.Add(commandInsertPlayer.ExecuteNonQuery());
                 if (i[0] > 0 && i[1]>0)
                 {

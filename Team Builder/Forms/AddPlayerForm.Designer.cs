@@ -289,7 +289,8 @@
             this.txtPlayerHeight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPlayerHeight.CustomButton.UseSelectable = true;
             this.txtPlayerHeight.CustomButton.Visible = false;
-            this.txtPlayerHeight.Lines = new string[0];
+            this.txtPlayerHeight.Lines = new string[] {
+        "10"};
             this.txtPlayerHeight.Location = new System.Drawing.Point(271, 224);
             this.txtPlayerHeight.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.txtPlayerHeight.MaxLength = 2;
@@ -302,6 +303,7 @@
             this.txtPlayerHeight.ShortcutsEnabled = true;
             this.txtPlayerHeight.Size = new System.Drawing.Size(94, 23);
             this.txtPlayerHeight.TabIndex = 22;
+            this.txtPlayerHeight.Text = "10";
             this.txtPlayerHeight.UseSelectable = true;
             this.txtPlayerHeight.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlayerHeight.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -335,7 +337,8 @@
             this.txtPlayerWeight.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPlayerWeight.CustomButton.UseSelectable = true;
             this.txtPlayerWeight.CustomButton.Visible = false;
-            this.txtPlayerWeight.Lines = new string[0];
+            this.txtPlayerWeight.Lines = new string[] {
+        "10"};
             this.txtPlayerWeight.Location = new System.Drawing.Point(137, 224);
             this.txtPlayerWeight.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.txtPlayerWeight.MaxLength = 2;
@@ -348,6 +351,7 @@
             this.txtPlayerWeight.ShortcutsEnabled = true;
             this.txtPlayerWeight.Size = new System.Drawing.Size(111, 23);
             this.txtPlayerWeight.TabIndex = 20;
+            this.txtPlayerWeight.Text = "10";
             this.txtPlayerWeight.UseSelectable = true;
             this.txtPlayerWeight.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlayerWeight.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -381,7 +385,8 @@
             this.txtPlayerAge.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPlayerAge.CustomButton.UseSelectable = true;
             this.txtPlayerAge.CustomButton.Visible = false;
-            this.txtPlayerAge.Lines = new string[0];
+            this.txtPlayerAge.Lines = new string[] {
+        "10"};
             this.txtPlayerAge.Location = new System.Drawing.Point(3, 224);
             this.txtPlayerAge.MaxLength = 2;
             this.txtPlayerAge.Name = "txtPlayerAge";
@@ -393,6 +398,7 @@
             this.txtPlayerAge.ShortcutsEnabled = true;
             this.txtPlayerAge.Size = new System.Drawing.Size(111, 23);
             this.txtPlayerAge.TabIndex = 18;
+            this.txtPlayerAge.Text = "10";
             this.txtPlayerAge.UseSelectable = true;
             this.txtPlayerAge.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlayerAge.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -426,7 +432,8 @@
             this.txtPlayerName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPlayerName.CustomButton.UseSelectable = true;
             this.txtPlayerName.CustomButton.Visible = false;
-            this.txtPlayerName.Lines = new string[0];
+            this.txtPlayerName.Lines = new string[] {
+        "Test"};
             this.txtPlayerName.Location = new System.Drawing.Point(3, 176);
             this.txtPlayerName.MaxLength = 50;
             this.txtPlayerName.Name = "txtPlayerName";
@@ -438,6 +445,7 @@
             this.txtPlayerName.ShortcutsEnabled = true;
             this.txtPlayerName.Size = new System.Drawing.Size(362, 23);
             this.txtPlayerName.TabIndex = 16;
+            this.txtPlayerName.Text = "Test";
             this.txtPlayerName.UseSelectable = true;
             this.txtPlayerName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPlayerName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
