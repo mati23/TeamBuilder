@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
@@ -124,8 +127,10 @@
             this.mtInjuryLabel = new MetroFramework.Controls.MetroLabel();
             this.mtConditionTB = new MetroFramework.Controls.MetroTrackBar();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroPanel2.SuspendLayout();
             this.metroPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel2
@@ -1555,11 +1560,29 @@
             this.metroPanel3.VerticalScrollbarSize = 10;
             this.metroPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel3_Paint);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(15, 444);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(392, 174);
+            this.chart1.TabIndex = 20;
+            this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // AddPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 667);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Name = "AddPlayerForm";
@@ -1569,6 +1592,7 @@
             this.metroPanel2.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1670,5 +1694,6 @@
         private MetroFramework.Controls.MetroLabel mtInjuryLabel;
         private MetroFramework.Controls.MetroTrackBar mtConditionTB;
         private MetroFramework.Controls.MetroPanel metroPanel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

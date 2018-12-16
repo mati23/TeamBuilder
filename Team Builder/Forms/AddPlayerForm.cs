@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using LiveCharts; //Core of the library
+using LiveCharts.Wpf; //The WPF controls
+using LiveCharts.WinForms; //the WinForm wrappers
 
 namespace Team_Builder.Forms
 {
@@ -20,9 +23,18 @@ namespace Team_Builder.Forms
         {
             InitializeComponent();
             LoadComboBoxes();
-           
-            
 
+            Dictionary<string, int> tags = new Dictionary<string, int>
+            {
+                {"test", 10 },
+                {"my", 3 },
+                {"code",5 }
+            };
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            foreach (string tagname in tags.Keys)
+            {
+                chart1.Series[0].Points.AddXY(tagname, tags[tagname]);
+            }
 
             MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
             
@@ -31,6 +43,8 @@ namespace Team_Builder.Forms
         //add registry to database
         private void metroTile2_Click(object sender, EventArgs e)
         {
+            
+            int playerStatsId;//this variable will receive the last id registered in the stats_player's table
             //string of the statement for insertion in stats_player table
             string sqlInsertStats = "INSERT INTO `stats_player` (date_updated,attack,ball_control,dribbling,low_pass,lofted_pass,finishing,curve,header,defensive_skill,ball_winning,kick_power,speed,explosion,body_strenght,physical_contact,jump,goalkeeping,catching,clearing,coverage,reflexes,stamina,non_domminant_foot_usage,non_domminant_foot_precision,`condition`,injury_resistence,stats_club_id,stats_player_name) VALUES (CURDATE()," +
             
@@ -61,33 +75,50 @@ namespace Team_Builder.Forms
              mtConditionTB.Value              + "," +
              mtInjuryResistenceTB.Value       + "," +
              "1,'Messi'" + ");";
+            
 
-            string sqlInsertPlayer = "INSERT INTO player (player_name,player_age,player_weight,player_height,"+
-                "player_nationality_id,player_dominant_foot,player_stats_id) VALUES ('" +
-                txtPlayerName.Text + "'," +
-                int.Parse(txtPlayerAge.Text)    + "," +
-                int.Parse(txtPlayerWeight.Text) + "," +
-                int.Parse(txtPlayerHeight.Text) + "," +
-                1                               + "," +
-                "''"                           + "," +
-                1                               +  ");";
-
+            
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand commandInsertStats = new MySqlCommand(sqlInsertStats, connection);
-            MySqlCommand commandInsertPlayer = new MySqlCommand(sqlInsertPlayer, connection);
+            
             commandInsertStats.CommandType = CommandType.Text;
-            commandInsertPlayer.CommandType = CommandType.Text;
+            
             connection.Open();
             try
             {
 
                 List<int> i = new List<int>();
-                i.Add(commandInsertStats.ExecuteNonQuery());
                 
-                i.Add(commandInsertPlayer.ExecuteNonQuery());
+                //this part will get the ID of the player just registered and link his ID to the player_stats_id
+                var idGetter = new MySqlCommand("SELECT player_id FROM player where player_name ='"
+                    + txtPlayerName.Text + "' ORDER BY player_id DESC;", connection);
+                playerStatsId = (int)idGetter.ExecuteScalar();
+                try
+                {
+                    string sqlInsertPlayer = "INSERT INTO player (player_name,player_age,player_weight,player_height," +
+                    "player_nationality_id,player_dominant_foot,player_stats_id) VALUES ('" +
+                    txtPlayerName.Text + "'," +
+                    int.Parse(txtPlayerAge.Text) + "," +
+                    int.Parse(txtPlayerWeight.Text) + "," +
+                    int.Parse(txtPlayerHeight.Text) + "," +
+                    1 + "," +
+                    "''" + "," +
+                    playerStatsId + ");";
+
+                    MySqlCommand commandInsertPlayer = new MySqlCommand(sqlInsertPlayer, connection);
+                    commandInsertPlayer.CommandType = CommandType.Text;
+                    i.Add(commandInsertPlayer.ExecuteNonQuery());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                i.Add(commandInsertStats.ExecuteNonQuery());
                 if (i[0] > 0 && i[1]>0)
                 {
                     MessageBox.Show("Player successfully registered!");
+                    MessageBox.Show(playerStatsId.ToString());
                 }
             }catch(Exception ex)
             {
@@ -646,6 +677,11 @@ namespace Team_Builder.Forms
         }
 
         private void metroTrackBar23_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }
