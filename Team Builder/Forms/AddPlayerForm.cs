@@ -11,35 +11,29 @@ using MySql.Data.MySqlClient;
 using LiveCharts; //Core of the library
 using LiveCharts.Wpf; //The WPF controls
 using LiveCharts.WinForms; //the WinForm wrappers
-
+using Team_Builder.Classes;
+using System.Windows.Forms.DataVisualization.Charting;
 namespace Team_Builder.Forms
 {
     
     public partial class AddPlayerForm : Form
     {
         private string connectionString = @"Server=localhost;Database=teambuilder;Uid=root;Password=123456789;";
-
+        Player new_player = new Player();
         public AddPlayerForm()
         {
             InitializeComponent();
-            LoadComboBoxes();
-
-            Dictionary<string, int> tags = new Dictionary<string, int>
-            {
-                {"test", 10 },
-                {"my", 3 },
-                {"code",5 }
-            };
-            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            foreach (string tagname in tags.Keys)
-            {
-                chart1.Series[0].Points.AddXY(tagname, tags[tagname]);
-            }
-
-            MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
-            
-            
+			Timer timer = new Timer();
+			timer.Interval = (10); // 10 secs
+			timer.Tick += new EventHandler(Timer_Tick);
+			timer.Start();
+			LoadComboBoxes();
+			MetroFramework.Controls.MetroTrackBar[] trackBars = new MetroFramework.Controls.MetroTrackBar[20];
         }
+		public void Timer_Tick(object sender, EventArgs e)
+		{
+			AddPlayerForm_Load(sender,e);
+		}
         //add registry to database
         private void metroTile2_Click(object sender, EventArgs e)
         {
@@ -77,7 +71,6 @@ namespace Team_Builder.Forms
              "1,'Messi'" + ");";
             
 
-            
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand commandInsertStats = new MySqlCommand(sqlInsertStats, connection);
             
@@ -135,10 +128,60 @@ namespace Team_Builder.Forms
         {
             
         }
-
+		//loads the Chart Content
         private void AddPlayerForm_Load(object sender, EventArgs e)
         {
-
+			/*I tried to clear the current chart to recalculate and redraw the chart in every cycle
+			but its not working this way*/
+			chart1.Series["s1"].Points.Clear();
+			chart1.Series.Clear();//clear the current chart
+			
+            new_player.SetPlayerStats(	//get values from TrackBars
+             mtTrackBarAttack.Value,
+             mtTrackBarBallControl.Value,
+             mtTrackBarDribbling.Value,
+             mtLowPassTB.Value,
+             mtLoftedPassTB.Value,
+             mtFinishingTB.Value,
+             mtCurveTB.Value,
+             mtHeadingTB.Value,
+             mtDefensiveTB.Value,
+             mtBallWinningTB.Value,
+             mtKickPowerTB.Value,
+             mtSpeedTB.Value,
+             mtExplosionTB.Value,
+             mtBodyStrenghtTB.Value,
+             mtPhysicalContactTB.Value,
+             mtJumpTB.Value,
+             mtGoalkeepingTB.Value,
+             mtCatchingTB.Value,
+             mtClearingTB.Value,
+             mtCoverageTB.Value,
+             mtReflexesTB.Value,
+             mtStaminaTB.Value,
+             mtNDFUsageTB.Value,
+             mtNDFPrecisionTB.Value,
+             mtConditionTB.Value,
+             mtInjuryResistenceTB.Value,
+             1,
+             "Messi");
+			//recalculate the arithimetic mean and returns as a tag to the chart
+			//Ex: {"Agility",60.4}
+			Dictionary<string, float> tags = new_player.MeanStats(); 
+            //creates a new series of data
+            chart1.Series.Add("s1");
+            chart1.Series["s1"].ChartType = SeriesChartType.Radar;
+            
+            
+            foreach (string tagname in tags.Keys)
+            {
+				//for each set of data, plots the name and its value in the Chart
+                chart1.Series["s1"].Points.AddXY(tagname, tags[tagname]);
+                
+            }
+			
+			
+            
         }
 
         private void metroTextBox2_Click(object sender, EventArgs e)
@@ -239,7 +282,7 @@ namespace Team_Builder.Forms
 
         }
 
-        private void mtTrackBarBallControl_Scroll(object sender, ScrollEventArgs e)
+        public void mtTrackBarBallControl_Scroll(object sender, ScrollEventArgs e)
         {
             AnyMetroTrackBar_ValueChanged(mtTrackBarBallControl, mtLabelBallControl,40,99);
         }
@@ -278,7 +321,7 @@ namespace Team_Builder.Forms
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-
+            Load += AddPlayerForm_Load;
         }
 
         private void metroPanel1_Paint(object sender, PaintEventArgs e)

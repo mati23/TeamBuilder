@@ -1569,10 +1569,11 @@
             this.chart1.Location = new System.Drawing.Point(15, 444);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "s1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(392, 174);
+            this.chart1.Size = new System.Drawing.Size(392, 211);
             this.chart1.TabIndex = 20;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
