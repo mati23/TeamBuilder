@@ -24,7 +24,7 @@ namespace Team_Builder.Forms
         {
             InitializeComponent();
 			Timer timer = new Timer();
-			timer.Interval = (10); // 10 secs
+			timer.Interval = (100); // 10 secs
 			timer.Tick += new EventHandler(Timer_Tick);
 			timer.Start();
 			LoadComboBoxes();
@@ -134,8 +134,9 @@ namespace Team_Builder.Forms
 			/*I tried to clear the current chart to recalculate and redraw the chart in every cycle
 			but its not working this way*/
 			chart1.Series["s1"].Points.Clear();
-			chart1.Series.Clear();//clear the current chart
 			
+			chart1.Series.Clear();//clear the current chart
+			//
             new_player.SetPlayerStats(	//get values from TrackBars
              mtTrackBarAttack.Value,
              mtTrackBarBallControl.Value,
@@ -170,7 +171,10 @@ namespace Team_Builder.Forms
 			Dictionary<string, float> tags = new_player.MeanStats(); 
             //creates a new series of data
             chart1.Series.Add("s1");
-            chart1.Series["s1"].ChartType = SeriesChartType.Radar;
+			chart1.ChartAreas[0].AxisY.Maximum = 100;
+			chart1.ChartAreas[0].AxisY.Minimum = 0;
+			
+			chart1.Series["s1"].ChartType = SeriesChartType.Radar;
             
             
             foreach (string tagname in tags.Keys)
@@ -179,10 +183,9 @@ namespace Team_Builder.Forms
                 chart1.Series["s1"].Points.AddXY(tagname, tags[tagname]);
                 
             }
+
 			
-			
-            
-        }
+		}
 
         private void metroTextBox2_Click(object sender, EventArgs e)
         {
@@ -314,7 +317,19 @@ namespace Team_Builder.Forms
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				
 
+
+				//System.IO.StreamReader streamReader = new System.IO.StreamReader(openFileDialog.FileName);
+				Image playerImage = Image.FromFile(openFileDialog.FileName);
+				playerImage = new Bitmap(playerImage, 130, 140);
+				MessageBox.Show("Image Successfully Loaded!");// streamReader.ReadToEnd().ToString()
+				playerPictureBox.Image = playerImage;
+				//streamReader.Close();
+			}
         }
 
        
